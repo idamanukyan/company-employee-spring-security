@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Comment</title>
+</head>
+<body>
+<form action="/addComment" method="post">
+    <input type="hidden" name="id" th:value="${topic.id}">
+    <input name="name" placeholder="type your comment here">
+    <input type="submit" value="add">
+</form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<h3><a href="/">Home page</a></h3>
+<h3><a href="/logout">Logout </a></h3>
+
+<div>
+    <h3> Employees </h3>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Salary</th>
+            <th>Employee Type</th>
+            <th>Company name</th>
+            <th>Send Message</th>
+        </tr>
+        <tr th:each="employee:${employees}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.name}"></td>
+            <td th:text="${employee.surname}"></td>
+            <td th:text="${employee.email}"></td>
+            <td th:text="${employee.phoneNumber}"></td>
+            <td th:text="${employee.salary}" $></td>
+            <td th:text="${employee.employeeType.name()}"></td>
+            <td th:text="${employee.getCompany().getName()}"></td>
+            <td><a th:href="@{/sendMessage(id=${employee.id})}" a href="#"> <span>Send Message</span>
+            </a></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

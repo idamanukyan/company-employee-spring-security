@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Topic</title>
+
+</head>
+<body>
+<h3><a href="/">Home page</a> | <a href="/logout">Logout </a></h3>
+
+<form action="/addTopic" method="post">
+    <input type="hidden" name="id" th:value="${employee.id}">
+    <input type="text" name="name" placeholder="add topic">
+    <input type="submit" value="add">
+</form>
+
+</body>
+</html>

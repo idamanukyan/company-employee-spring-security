@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Companies</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+
+<h3><a href="/">Home page</a></h3>
+<div>
+    <h3 style="color: darkblue"> Companies </h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Address</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="company:${companies}">
+            <td th:text="${company.id}"></td>
+            <td th:text="${company.name}"></td>
+            <td th:text="${company.size}"></td>
+            <td th:text="${company.address}"></td>
+            <td><a th:href="@{/deleteCompany/{id}(id=${company.getId()})}" a href="#"> <span> Delete</span>
+            </a></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

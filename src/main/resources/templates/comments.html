@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Topics</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<h3><a href="/">Home page</a> | <a href="/logout">Logout </a></h3>
+
+<table>
+    <tr>
+        <th>Topic Name</th>
+        <th>Author Name</th>
+        <th>Created Date</th>
+    </tr>
+    <tr th:each="comment:${comments}">
+        <td th:text="${comment.text}"></td>
+        <td th:text="${comment.topic.name}"></td>
+        <td th:text="${comment.employee.name}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
